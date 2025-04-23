@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Selamat Ulang Tahun, Vita 🎂</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Georgia', serif;
+      background: linear-gradient(to bottom right, #ffc1cc, #ffe6f0);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+    }
+
+    .container {
+      width: 320px;
+      background-color: rgba(255, 255, 255, 0.3);
+      padding: 30px;
+      border-radius: 25px;
+      text-align: center;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+      backdrop-filter: blur(6px);
+    }
+
+    h1 {
+      font-family: 'Pacifico', cursive;
+      font-size: 22px;
+      color: #d81b60;
+      margin-bottom: 20px;
+      line-height: 1.4;
+      animation: fadeSlide 1.5s ease-out forwards;
+      opacity: 0;
+      transform: translateY(20px);
+    }
+
+    p {
+      font-family: 'Pacifico', cursive;
+      font-size: 14px;
+      margin: 8px 0;
+      opacity: 0;
+      transform: translateY(10px);
+      animation: fadeSlide 1.2s ease-out forwards
+    }
+
+    p:nth-of-type(1) { animation-delay: 0.3s; }
+    p:nth-of-type(2) { animation-delay: 0.6s; }
+    p:nth-of-type(3) { animation-delay: 0.9s; }
+    p:nth-of-type(4) { animation-delay: 1.2s; }
+    p:nth-of-type(5) { animation-delay: 1.5s; }
+    p:nth-of-type(6) { animation-delay: 1.8s; }
+    p:nth-of-type(7) { animation-delay: 2.1s; }
+    p:nth-of-type(8) { animation-delay: 2.4s; }
+    p:nth-of-type(9) { animation-delay: 2.7s; }
+
+    @keyframes fadeSlide {
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    @keyframes openEnvelope {
+      0% {
+        transform: rotateX(90deg);
+        opacity: 0; 
+      }
+      100% {
+        transform: rotateX(0deg);
+        opacity: 1;
+      }
+    }
+
+    .love {
+      width: 100px;
+      margin-top: 20px;
+      animation: openEnvelope 1.5s ease-out forwards; 
+      opacity: 0;
+      transform-origin: top center ;
+    }
+
+    a {
+      display: inline-block;
+      margin-top: 25px;
+      font-size: 14px;
+      text-decoration: none;
+      background-color: #f06292;
+      color: white;
+      padding: 8px 16px;
+      border-radius: 15px;
+      transition: background 0.3s;
+      opacity: 0;
+      animation: fadeSlide 3.5s ease forwards;
+      transform: translateY(10px)
+    }
+
+    a:hover {
+      background-color: #ec407a;
+    }
+
+    .play-button {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background: #d61884;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 20px;
+      font-size: 14px;
+      cursor: pointer;
+      z-index: 99;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    }
+
+  </style>
+</head>
+<body>
+
+  <audio id="bg-music" autoplay loop>
+    <source src="music/yt1z.net - Raissa Anggiani - Losing Us (64 KBps).mp3" type="audio/mpeg">
+    Browser kamu tidak mendukung audio.
+  </audio>
+
+  <script>
+    const bgMusic = document.getElementById('bg-music');
+    bgMusic.play().catch(() => {
+      const playButton = document.createElement('button');
+      playButton.innerText = "Klik untuk Memutar Musik 🎵";
+      playButton.className = 'play-button';
+      document.body.appendChild(playButton);
+      playButton.addEventListener('click', () => {
+        bgMusic.play();
+        playButton.remove();
+      });
+    });
+
+  </script>
+  
+  <div class="container">
+    <h1>Selamat Ulang Tahun Vita <div class></div>🎂</h1>
+    
+    <p>Bukan lagi aku yang menyapamu pertama,</p>
+    <p>tapi diam diam, aku tetap mendoakanmu.<br></br></p>
+    <p>Selamat ulang tahun,</p>
+    <p>untukmu yang pernah jadi rumah,</p>
+    <p>yang kini hanya tinggal kenangan.<br></br></p>
+    <p>Semoga kamu bahagia,</p>
+    <p>meski bukan aku yang menemani.</p>
+    <p>Dan semoga langkahmu ringan,</p>
+    <p>dikelilingi cinta yang tak membuatmu ragu.</p>
+    <img src="images/amplop buka.png" alt="Love Letter" class="love" />
+    <br/>
+    <a href="Page1tutupamplop.html">kembali ke halaman pertama ></a>
+  </div>
+</body>
+</html>
